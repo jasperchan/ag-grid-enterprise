@@ -36,6 +36,10 @@ var RichSelectRow = (function (_super) {
             // https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML#Security_considerations
             this.getGui().textContent = value.toString();
         }
+        else {
+            // putting in blank, so if missing, at least the user can click on it
+            this.getGui().innerHTML = '&nbsp;';
+        }
     };
     RichSelectRow.prototype.populateWithRenderer = function (value) {
         var childComponent = this.cellRendererService.useCellRenderer(this.cellRenderer, this.getGui(), { value: value });

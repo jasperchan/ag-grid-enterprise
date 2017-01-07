@@ -232,7 +232,7 @@ var ClipboardService = (function () {
         var value = this.valueService.getValue(column, rowNode);
         var processedValue = this.processRangeCell(rowNode, column, value, this.gridOptionsWrapper.getProcessCellForClipboardFunc());
         if (main_1.Utils.exists(processedValue)) {
-            var data = value.toString();
+            var data = processedValue.toString();
             this.copyDataToClipboard(data);
         }
         else {
